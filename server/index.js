@@ -1,10 +1,12 @@
+'use strict'
+require('mithril/test-utils/browserMock')(global)
+global.window.XMLHttpRequest = require('w3c-xmlhttprequest').XMLHttpRequest
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys')
 const passport = require('passport');
-const axios = require('axios')
-const router = require('express').Router();
 require('./models/User');
 require('./services/passport');
 
