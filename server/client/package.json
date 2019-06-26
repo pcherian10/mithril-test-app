@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "http-proxy-middleware": "^0.19.1",
     "mithril": "^2.0.0-rc.6"
   },
   "devDependencies": {
