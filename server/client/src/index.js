@@ -1,3 +1,5 @@
-import m from "mithril";
+var m = require("mithril")
 
-m.render(document.body, "hello world");
+var UserList = require("./views/UserList")
+
+m.mount(document.body, UserList)
