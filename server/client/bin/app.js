@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./URL.js":
+/*!****************!*\
+  !*** ./URL.js ***!
+  \****************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = {\n    baseURL: \"http://localhost:5000/\"\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9VUkwuanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9VUkwuanM/NGViZSJdLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IHtcbiAgICBiYXNlVVJMOiBcImh0dHA6Ly9sb2NhbGhvc3Q6NTAwMC9cIlxufSJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./URL.js\n");
+
+/***/ }),
+
 /***/ "./node_modules/mithril/api/mount.js":
 /*!*******************************************!*\
   !*** ./node_modules/mithril/api/mount.js ***!
@@ -460,7 +471,7 @@ eval("var m = __webpack_require__(/*! mithril */ \"./node_modules/mithril/index.
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var m = __webpack_require__(/*! mithril */ \"./node_modules/mithril/index.js\")\n\nvar User = {\n    list: [],\n    loadList: function() {\n        return m.request({\n            method: \"GET\",\n            url: \"http://localhost:5000/auth/google\",\n            withCredentials: true,\n        })\n        .then(function(result) {\n            console.log(result)\n            User.list = result.data\n        })\n    },\n}\n\nmodule.exports = User\n\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvbW9kZWxzL1VzZXIuanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvbW9kZWxzL1VzZXIuanM/ZWJkMSJdLCJzb3VyY2VzQ29udGVudCI6WyJ2YXIgbSA9IHJlcXVpcmUoXCJtaXRocmlsXCIpXG5cbnZhciBVc2VyID0ge1xuICAgIGxpc3Q6IFtdLFxuICAgIGxvYWRMaXN0OiBmdW5jdGlvbigpIHtcbiAgICAgICAgcmV0dXJuIG0ucmVxdWVzdCh7XG4gICAgICAgICAgICBtZXRob2Q6IFwiR0VUXCIsXG4gICAgICAgICAgICB1cmw6IFwiaHR0cDovL2xvY2FsaG9zdDo1MDAwL2F1dGgvZ29vZ2xlXCIsXG4gICAgICAgICAgICB3aXRoQ3JlZGVudGlhbHM6IHRydWUsXG4gICAgICAgIH0pXG4gICAgICAgIC50aGVuKGZ1bmN0aW9uKHJlc3VsdCkge1xuICAgICAgICAgICAgY29uc29sZS5sb2cocmVzdWx0KVxuICAgICAgICAgICAgVXNlci5saXN0ID0gcmVzdWx0LmRhdGFcbiAgICAgICAgfSlcbiAgICB9LFxufVxuXG5tb2R1bGUuZXhwb3J0cyA9IFVzZXJcblxuIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTsiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/models/User.js\n");
+eval("const m = __webpack_require__(/*! mithril */ \"./node_modules/mithril/index.js\")\nconst { baseURL } = __webpack_require__(/*! ../../URL */ \"./URL.js\")\n\n\nconst User = {\n    list: [],\n    loadList: function() {\n        return m.request({\n            method: \"GET\",\n            url: `${baseURL}auth/google`,\n            withCredentials: true,\n        })\n        .then(function(result) {\n            console.log(result)\n            User.list = result.data\n        })\n    },\n}\n\nmodule.exports = User\n\n\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvbW9kZWxzL1VzZXIuanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvbW9kZWxzL1VzZXIuanM/ZWJkMSJdLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBtID0gcmVxdWlyZShcIm1pdGhyaWxcIilcbmNvbnN0IHsgYmFzZVVSTCB9ID0gcmVxdWlyZShcIi4uLy4uL1VSTFwiKVxuXG5cbmNvbnN0IFVzZXIgPSB7XG4gICAgbGlzdDogW10sXG4gICAgbG9hZExpc3Q6IGZ1bmN0aW9uKCkge1xuICAgICAgICByZXR1cm4gbS5yZXF1ZXN0KHtcbiAgICAgICAgICAgIG1ldGhvZDogXCJHRVRcIixcbiAgICAgICAgICAgIHVybDogYCR7YmFzZVVSTH1hdXRoL2dvb2dsZWAsXG4gICAgICAgICAgICB3aXRoQ3JlZGVudGlhbHM6IHRydWUsXG4gICAgICAgIH0pXG4gICAgICAgIC50aGVuKGZ1bmN0aW9uKHJlc3VsdCkge1xuICAgICAgICAgICAgY29uc29sZS5sb2cocmVzdWx0KVxuICAgICAgICAgICAgVXNlci5saXN0ID0gcmVzdWx0LmRhdGFcbiAgICAgICAgfSlcbiAgICB9LFxufVxuXG5tb2R1bGUuZXhwb3J0cyA9IFVzZXJcblxuXG4iXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/models/User.js\n");
 
 /***/ }),
 

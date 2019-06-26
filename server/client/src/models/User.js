@@ -1,11 +1,13 @@
-var m = require("mithril")
+const m = require("mithril")
+const { baseURL } = require("../../URL")
 
-var User = {
+
+const User = {
     list: [],
     loadList: function() {
         return m.request({
             method: "GET",
-            url: "http://localhost:5000/auth/google",
+            url: `${baseURL}auth/google`,
             withCredentials: true,
         })
         .then(function(result) {
@@ -16,4 +18,5 @@ var User = {
 }
 
 module.exports = User
+
 
