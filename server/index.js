@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cors = require('cors')
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys')
 const passport = require('passport');
@@ -12,7 +11,12 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
-app.use(cors({ origin: '*' }));
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 app.use(bodyParser.json()); //express doesn't automatically parse the body of objects, so we need this module.
 
